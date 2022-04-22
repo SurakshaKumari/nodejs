@@ -37,7 +37,7 @@
 
 //................................................for area
 
-var area = require('./area')
+var area = require('./area');
 // var measure = 
 // { area: (x,y) =>  (x*y)
 // };
