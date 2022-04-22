@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "Express": "^3.0.1",
+    "express": "^4.17.3"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
