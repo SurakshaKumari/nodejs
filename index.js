@@ -16,18 +16,33 @@
 //     server.listen(3000, function
 //     (){
 //     console.log(" port 3000")})
+//...............................................................
 
-const express = require('express')
+// const express = require('express')
 
-const app = express()
+// const app = express()
 
-app.get('/', function(req, res) {
-    res.json({msg:'success'})
-})
+// app.get('/', function(req, res) {
+//     res.json({msg:'success'})
+// })
 
-app.get('/about', function(req, res) {
-    res.json({data:'available' , msg:'success'})
-})
+// app.get('/about', function(req, res) {
+//     res.json({data:'available' , msg:'success'})
+// })
 
-app.listen(3000, function(){
-         console.log(" listening port 3000")})
+// app.listen(3000, function(){
+//          console.log(" listening port 3000")})
+
+
+
+//................................................for area
+
+//var area = require('./area')
+var measure = 
+{ area: (x,y) =>  (x*y)
+};
+
+ function solve(x,y){
+     console.log("area is: " + measure.area(x,y))
+}
+solve(2,3);
