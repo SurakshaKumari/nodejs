@@ -1,0 +1,146 @@
+//create css file main.css
+
+//give path in html filr
+
+-dev dependency
+//install nodemon
+//add script
+"nodemon index.js"
+
+
+//in index.js
+app.use(express.static('public'))
+//no need to write public in path
+css/main.css
+
+//way to change path from public//css to style. as we donot have style folder
+//way of maping
+app.use('/style',express.static('public/css'))
+
+//if want scripts at the place of any then
+app.use('/scripts',express.static('public/css'))
+
+//template engines ?
+//Jad template engine also called Pug
+
+//install ejs
+//set in index.js
+app.set('view engine', 'ejs')
+//make dynamic by moving about.html and index.html in view foler
+//extension of files index.html and about.html will be ejs
+
+app.get('/', function(req,res){
+res.render('index')})
+
+//same for about
+
+app.get('/about', function(req,res){}
+
+
+
+
+//extension .php
+<?php ?>
+
+//ejs use percentage
+
+<h2>hello <%=name %></h2>
+equal means print name
+//dynamically
+app.get('/', function(req,res){
+
+res.render('index',{name:"surii'})})
+
+//for server side rendering
+app.get('/', function(req,res){
+const products = ['a','b']
+res.render('index',{name:"surii', products})})
+
+//enhance object literal and computed property in ES6?
+
+//show producta in index.ejs file
+<ul>
+<% for (let i=0; i<producrs.length, i++){} %>
+
+</ul>
+
+//treat it like html not javascript
+<ul>
+<% for (let i=0; i<producrs.length, i++){ %>
+<li> <%=products[i]%><li>
+<% } %>
+</ul>
+
+
+//complete javascript
+<%
+let lis =''
+for (let i=0; i<producrs.length, i++){
+lis +=  `<li>${products[i]}<li/>`
+} %>
+<ul>
+<%- lis %>
+</ul>
+
+
+//if we have 20 pages then problem occur in changings 
+//solution we need to create layout
+//now we do it by ejs
+
+<ul>
+<li><a href="/">homepage</a></li>
+<li><a href="/about">about</a></li>
+</ul>
+
+//remove it
+
+//make folder of layout in views 
+//navbar.ejs
+<ul>
+<li><a href="/">homepage</a></li>
+<li><a href="/about">about</a></li>
+</ul>
+
+//in index.ejs
+//treat like html
+<body>
+<%-include ('layout/navbar')%>
+<h1>About</h1>
+</body>
+
+
+
+
+//pug
+//create bew file in views name blog.pug
+//put code of html file
+doctype 
+html
+body
+h1 hello #{name}
+ul
+each pro in products
+li #{pro}
+// . used for next line in pug
+
+//in index.js
+const {render,compileFile} = require('pug')
+app.all('/blog', function(req, res){
+const products = ....
+res.render('blog', 
+
+
+//create heading.pug
+
+h1 #{name}
+
+//in index.js
+const func = compileFile('views/heading.pug')
+console.log(func({name:"suraksha}))
+
+//change template
+h4 #{name}
+
+//understand pug ( pug template engine nodejs)
+
+
