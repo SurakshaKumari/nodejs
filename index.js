@@ -13,6 +13,8 @@
 //     }
 //     })
 
+const area = require("./area")
+
 //     server.listen(3000, function
 //     (){
 //     console.log(" port 3000")})
@@ -48,4 +50,13 @@
 // solve(2,3);
 
 
-//.................................................
+//................................................. for callback function area
+
+function solve(x,y){
+    area(x,y,(err, area) => {
+    if(err){console.log("error" +err.m)}
+    else{ console.log("area is " +  area.area());}
+     });
+     console.log("after arrea");
+    }
+    solve(0,3);
