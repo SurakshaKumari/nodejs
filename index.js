@@ -37,12 +37,16 @@
 
 //................................................for area
 
-var area = require('./area');
-// var measure = 
-// { area: (x,y) =>  (x*y)
-// };
+// var area = require('./area');
+// // var measure = 
+// // { area: (x,y) =>  (x*y)
+// // };
 
- function solve(x,y){
-     console.log("area is: " + area.area(x,y))
-}
-solve(2,3);
+//  function solve(x,y){
+//      console.log("area is: " + area.area(x,y))
+// }
+// solve(2,3);
+
+
+//.................................................
+ok
