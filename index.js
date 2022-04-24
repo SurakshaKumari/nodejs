@@ -13,7 +13,7 @@
 //     }
 //     })
 
-const area = require("./area")
+//const area = require("./area")
 
 //     server.listen(3000, function
 //     (){
@@ -52,11 +52,24 @@ const area = require("./area")
 
 //................................................. for callback function area
 
-function solve(x,y){
-    area(x,y,(err, area) => {
-    if(err){console.log("error" +err.m)}
-    else{ console.log("area is " +  area.area());}
-     });
-     console.log("after arrea");
-    }
-    solve(0,3);
+// function solve(x,y){
+//     area(x,y,(err, area) => {
+//     if(err){console.log("error" +err.m)}
+//     else{ console.log("area is " +  area.area());}
+//      });
+//      console.log("after arrea");
+//     }
+//     solve(0,3);
+
+
+//..............................................
+const http = require('http')
+const fs = require('fs')
+const path = require('path')
+
+const server = http.createServer((req,res) => {
+res.write('request for ' + req.url+ "method is "+ req.method)
+
+res.end()
+}) ;
+server.listen(3000, function(req,res){console.log("listen this port")});
