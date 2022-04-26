@@ -131,6 +131,9 @@ const {render, compileFile} = require('pug');
 
 
 app.get('/blog', function(req,res){
+    const func = compileFile('views/heading.pug')
+    console.log(func({name: 'suraksha'}));
+    console.log(func({name: 'kumari'}));
     const products = ['a','b','c','d','e','ok']
    res.render('blog', {name: 'suraksha', products});
 
