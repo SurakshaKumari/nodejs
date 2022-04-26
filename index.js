@@ -118,24 +118,25 @@
 
 
 
-// ..........................on template engine
+// ..........................on template engine pug
 const express = require('express');
 const path= require('path');
 const app = express()
-let ejs = require('ejs');
 
-app.use('/style', express.static('public/css'))
+ //let ejs = require('ejs');
+const {render, compileFile} = require('pug');
+ app.use('/style', express.static('public/css'))
 
-app.set('view engine', 'ejs')
+ app.set('view engine', 'pug')
 
 
-app.get('/', function(req,res){
+app.get('/blog', function(req,res){
     const products = ['a','b','c','d','e','ok']
-   res.render('index', {name: 'suraksha', products});
+   res.render('blog', {name: 'suraksha', products});
 
 })
 
-app.all('/about', function(req,res){
+app.all('*', function(req,res){
     res.render('about', {name:'suraksha'});
 })
 app.listen(3000, function(){
