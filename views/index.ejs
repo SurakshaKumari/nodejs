@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+<h1> This is homepage</h1>
+<h2>Hello <%= name %>
+    <ul>
+       <!-- <% for(let i=0; i<products.length; i++){ %>
+<li> <%=products[i]%> </li>
+       <% } %>-->
+
+       <% 
+       let lis= '';
+       for(let i=0; i<products.length; i++){
+         lis += '<li>' +products[i]+ '</li>';
+       }
+       %>
+       <%- lis %>
+    </ul>
+
+</h2>
+</body>
+</html>

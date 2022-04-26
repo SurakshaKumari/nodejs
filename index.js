@@ -91,32 +91,52 @@
 // }) ;
 // server.listen(3000, function(req,res){console.log("listen this port")});
 
+//....................................on nodemon
+// const express = require('express');
+// const path= require('path');
+// const app = express()
 
-// ..........................on nodemon
+// app.use(express.static('public'))
+
+// app.get('/', function(req,res){
+//    const homepage = path.resolve(__dirname, 'index.html')
+//    //console.log(__dirname);
+//    res.sendFile(homepage);
+
+// })
+
+// app.all('/about', function(req,res){
+//    const aboutpage = path.resolve(__dirname, 'about.html')
+//    console.log(__dirname);
+//    res.sendFile(aboutpage);
+
+// })
+// app.listen(3000, function(){
+//    console.log('listening to 3000 port');
+// })
 
 
 
 
-
-
- const express = require('express');
- const path= require('path');
+// ..........................on template engine
+const express = require('express');
+const path= require('path');
 const app = express()
+let ejs = require('ejs');
 
-app.use(express.static('public'))
+app.use('/style', express.static('public/css'))
+
+app.set('view engine', 'ejs')
+
 
 app.get('/', function(req,res){
-    const homepage = path.resolve(__dirname, 'index.html')
-    //console.log(__dirname);
-    res.sendFile(homepage);
+    const products = ['a','b','c','d','e','ok']
+   res.render('index', {name: 'suraksha', products});
 
 })
 
 app.all('/about', function(req,res){
-    const aboutpage = path.resolve(__dirname, 'about.html')
-    console.log(__dirname);
-    res.sendFile(aboutpage);
-
+    res.render('about', {name:'suraksha'});
 })
 app.listen(3000, function(){
     console.log('listening to 3000 port');
